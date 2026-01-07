@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تجربة Wasf المجانية</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --radius: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: var(--secondary);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* Coupon Box */
+    .coupon-box {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: #fff;
+      border: 1px dashed var(--border);
+      padding: 16px;
+      border-radius: var(--radius);
+      max-width: 400px;
+      margin: 30px 0;
+    }
+
+    .coupon-code {
+      flex: 1;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .copy-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .copy-btn:hover {
+      opacity: 0.9;
+    }
+
+    ul {
+      padding-right: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    .steps li {
+      list-style: decimal;
+      margin-right: 10px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .copied {
+      background: #16a34a !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>احصل على تجربة مجانية لمدة 3 أيام</h1>
+
+    <p>
+      إضافة وصف Wasf تساعدك على إنشاء عناوين وأوصاف منتجات تسويقية بشكل ذكي،
+      مباشرة من صفحة إضافة المنتج في سلة، بدون تعقيد وبدون كتابة متعبة.
+    </p>
+
+    <!-- Coupon -->
+    <div class="coupon-box">
+      <div class="coupon-code" id="coupon">WASF01</div>
+      <button class="copy-btn" onclick="copyCoupon()">نسخ الكوبون</button>
+    </div>
+
+    <!-- Why Wasf -->
+    <h2>لماذا يستخدم تجار سلة وصف Wasf؟</h2>
+    <ul>
+      <li>تعمل مباشرة داخل صفحة إضافة المنتج في سلة</li>
+      <li>توليد عناوين تسويقية ذكية من كلمة مفتاحية واحدة</li>
+      <li>إنشاء وصف منتج منسق وجاهز للبيع</li>
+      <li>تحكم كامل في نبرة المحتوى وطوله</li>
+      <li>لا تفقد المحتوى السابق عند الإغلاق</li>
+      <li>مصممة خصيصًا لتجار سلة فقط</li>
+    </ul>
+
+    <!-- How it works -->
+    <h2>كيف تعمل؟</h2>
+    <ul class="steps">
+      <li>اكتب اسم المنتج أو الكلمة المفتاحية</li>
+      <li>اضغط على أيقونة القلم</li>
+      <li>اختر العنوان أو الوصف المناسب</li>
+      <li>أضفه مباشرة إلى المنتج</li>
+    </ul>
+
+    <p>
+      كل ذلك يتم داخل سلة بدون فتح مواقع خارجية.
+    </p>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <a href="#" target="_blank">قناتنا على اليوتيوب</a>
+        — تواصل معنا مباشرة على:
+        <a href="mailto:holoolpro@gmail.com">holoolpro@gmail.com</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    function copyCoupon() {
+      const coupon = document.getElementById("coupon").innerText;
+      navigator.clipboard.writeText(coupon);
+
+      const btn = document.querySelector(".copy-btn");
+      btn.innerText = "تم النسخ ✓";
+      btn.classList.add("copied");
+
+      setTimeout(() => {
+        btn.innerText = "نسخ الكوبون";
+        btn.classList.remove("copied");
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
